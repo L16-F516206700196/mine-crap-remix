@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="viewport" content="width=device-width, minimal-ui, initial-scale=1, maximum-scale=1, user-scalable=0">
-<title>Bloxd.io</title>
+<title>Bloxd.io Online</title>
 <script src="gl-matrix-min.js"></script>
 <script src="main-mobile.js"></script>
 
@@ -76,7 +76,7 @@ color: #FFFFA0;
 100% { background-position: 0 0; }
 }
 
-#instructions{font-size:15px;margin-top:0px;line-height:112%;display:none;}#failinit{position: absolute; left: 50%; top: 194px; width: 70%; margin-left: -35%; margin-top: -24px; height: 48px; font-size: 20px; color: red; text-align: center; display: none; z-index:2;}#newgame{margin-top:154px;}.logo{position: absolute; left: 50%; top:82px; width: 548px; height: 93px; margin-left:-274px;}.toolbox{position: absolute; width: 48px; height: 48px; border: solid 2px rgb(128, 128, 128); background: rgba(128, 128, 128, 0.5);}#toolbox{left: 16px; bottom: 3.33%;}.tool{background: transparent;}#held{position: absolute; z-index: 2; pointer-events: none;}#terrain{display: none;}#chat{position: absolute; height: 83%; top: 0; left: 16px; color: white; overflow-y: hidden;}#clog{height: 400px;}a, a:visited{text-decoration:none;} #footer{position:absolute;bottom:0px;left:50%;margin-left:-364px;width:728px;height:90px;overflow:hidden;display:block;}#header{position:absolute;top:0px;left:50%;margin-left:-364px;width:728px;height:90px;overflow:hidden;}#pause{top:154px;height:0px;}#title{background-image:url(panorama3.jpg);background-size:1093px;animation:animatedbg 20s infinite;}#throbber{position: absolute; left:530px; text-align: center; top: 110px; width: 160px; font-size: 18px; -webkit-transform: rotate(-18deg); -moz-transform: rotate(-18deg); color: yellow; text-shadow: 3px 3px 2px #222; animation: pulse 0.27s ease-in-out 0s infinite alternate; -moz-animation: pulse 0.27s ease-in-out 0s infinite alternate; -webkit-animation: pulse 0.27s ease-in-out 0s infinite alternate;}@keyframes pulse{0%{transform: scale(1,1) rotate(-19deg);}100%{transform: scale(1.07,1.07) rotate(-19deg);}}@-webkit-keyframes pulse{0%{-webkit-transform: scale(1,1) rotate(-19deg);}100%{-webkit-transform: scale(1.07,1.07) rotate(-19deg);}}@-moz-keyframes pulse{0%{-moz-transform: scale(1,1) rotate(-19deg);}100%{-moz-transform: scale(1.07,1.07) rotate(-19deg);}}.dpad{position:absolute;border:1px solid #000;border-radius:4px;padding:8px;width:50px;height:50px;font-size:40px;font-weight:bold;background:rgba(204,204,204,0.4);}#crosshair{position:absolute;top:48%;left:49%;font-size:20px;}
+#instructions{font-size:15px;margin-top:0px;line-height:112%;display:none;}#failinit{position: absolute; left: 50%; top: 194px; width: 70%; margin-left: -35%; margin-top: -24px; height: 48px; font-size: 20px; color: red; text-align: center; display: none; z-index:2;}#newgame{margin-top:154px;}.logo{position: absolute; left: 50%; top:50px; width: 548px; height: 93px; margin-left:-274px;}.toolbox{position: absolute; width: 48px; height: 48px; border: solid 2px rgb(128, 128, 128); background: rgba(128, 128, 128, 0.5);}#toolbox{left: 16px; bottom: 3.33%;}.tool{background: transparent;}#held{position: absolute; z-index: 2; pointer-events: none;}#terrain{display: none;}#chat{position: absolute; height: 83%; top: 0; left: 16px; color: white; overflow-y: hidden;}#clog{height: 400px;}a, a:visited{text-decoration:none;} #footer{position:absolute;bottom:0px;left:50%;margin-left:-364px;width:728px;height:90px;overflow:hidden;display:block;}#header{position:absolute;top:0px;left:50%;margin-left:-364px;width:728px;height:90px;overflow:hidden;}#pause{top:154px;height:0px;}#title{background-image:url(panorama3.jpg);background-size:1093px;animation:animatedbg 20s infinite;}#throbber{position: absolute; left:530px; text-align: center; top: 110px; width: 160px; font-size: 18px; -webkit-transform: rotate(-18deg); -moz-transform: rotate(-18deg); color: yellow; text-shadow: 3px 3px 2px #222; animation: pulse 0.27s ease-in-out 0s infinite alternate; -moz-animation: pulse 0.27s ease-in-out 0s infinite alternate; -webkit-animation: pulse 0.27s ease-in-out 0s infinite alternate;}@keyframes pulse{0%{transform: scale(1,1) rotate(-19deg);}100%{transform: scale(1.07,1.07) rotate(-19deg);}}@-webkit-keyframes pulse{0%{-webkit-transform: scale(1,1) rotate(-19deg);}100%{-webkit-transform: scale(1.07,1.07) rotate(-19deg);}}@-moz-keyframes pulse{0%{-moz-transform: scale(1,1) rotate(-19deg);}100%{-moz-transform: scale(1.07,1.07) rotate(-19deg);}}.dpad{position:absolute;border:1px solid #000;border-radius:4px;padding:8px;width:50px;height:50px;font-size:40px;font-weight:bold;background:rgba(204,204,204,0.4);}#crosshair{position:absolute;top:48%;left:49%;font-size:20px;}
 
 #embedgame {
 	display: none;
@@ -84,40 +84,38 @@ color: #FFFFA0;
 </style>
 </head>
 <body>
-  <div id="canvas_container">
-         <canvas id="canvas" width="854" height="480"></canvas>
-         <div id="hud" class="page" style="display: none;">
-            <div id="chat">
-               <div id="clog">&nbsp;</div>
-            </div>
-            <div id="dpadcont"></div>
-            <div id="crosshair">+</div>
-           
-         </div>
-         <div id="title" class="page" >
-            <div class="logo"><img src="logo.svg" style="height:71px;"></div>
-            <div id="throbber"> </div>
-            <div id="failinit"></div>
-            <div id="menubuttons" style="display:block;">
-               <span id="newgame" class="mcbutton">NEW GAME</span><br>
-               <span id="loadgame" class="mcbutton">LOAD GAME</span><br>
-               <span id="moregame" class="mcbutton"><a href="https://martinmmcyt.github.io/mine-crap/" target="_BLANK" style="padding:5px 48px;border:none;color:#fff;">MORE GAMES</a></span><br>
-               <span id="helpgame" class="mcbutton">HOW TO PLAY</span><br>
-               <span id="embedgame" class="mcbutton">EMBED ON YOUR SITE</span><br>
-            </div>
-            <div id="embed_code" style="display:none;"><br>Copy and paste the code below:<br><input style="width:365px;" value="<iframe src=&quot;//www.gamessumo.com?embed=minecraft&quot; style=&quot;width:854px;height:480px;border:none;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;></iframe>" onclick="this.select();"></div>
-            <div id="instructions">
-               Move using WASD/Cursor keys and mouse - SPACE to jump (double jump to hover)<br>
-               Left/right click to mine/place items<br>
-               1-9 = Select item slots - T = Throw item - C = Add tree<br>
-               CTRL-S = Save - CTRL-L = Load - F1 = HUD<br>
-               ESC - Pause game/see these instructions again
-            </div>
-            <div id="header"></div>
+<div id="canvas_container" style="transform: scale(0.627083, 0.627083);">
+<canvas id="canvas" width="854" height="480"></canvas>
+<div id="hud" class="page" style="display: none;">
+<div id="chat"><div id="clog">&nbsp;</div></div>
+<div id="dpadcont"></div>
+<div id="crosshair">+</div>
+<div class="toolbox" style="left: 152px; top: 416px;"><canvas class="tool" id="hud0" height="48" width="48"></canvas></div><div class="toolbox" style="left: 210px; top: 416px;"><canvas class="tool" id="hud1" height="48" width="48"></canvas></div><div class="toolbox" style="left: 268px; top: 416px;"><canvas class="tool" id="hud2" height="48" width="48"></canvas></div><div class="toolbox" style="left: 326px; top: 416px;"><canvas class="tool" id="hud3" height="48" width="48"></canvas></div><div class="toolbox" style="left: 384px; top: 416px;"><canvas class="tool" id="hud4" height="48" width="48"></canvas></div><div class="toolbox" style="left: 442px; top: 416px;"><canvas class="tool" id="hud5" height="48" width="48"></canvas></div><div class="toolbox" style="left: 500px; top: 416px;"><canvas class="tool" id="hud6" height="48" width="48"></canvas></div><div class="toolbox" style="left: 558px; top: 416px;"><canvas class="tool" id="hud7" height="48" width="48"></canvas></div><div class="toolbox" style="left: 616px; top: 416px;"><canvas class="tool" id="hud8" height="48" width="48"></canvas></div></div>
+<div id="title" class="page" style="display: block;">
+<div class="logo"><img src="logo.png" style="height:130px;"></div>
+<div id="throbber">Play Online!</div>
+<div id="failinit"></div>
+<div id="menubuttons" style="display:block;">
+<span id="newgame" class="mcbutton">NEW GAME</span><br>
+<span id="loadgame" class="mcbutton">LOAD GAME</span><br>
+<span id="moregame" class="mcbutton"><a href="https://martinmmcyt.github.io/mine-crap/" target="_BLANK" style="padding:5px 48px;border:none;color:#fff;">MORE GAMES</a></span><br>
+<span id="helpgame" class="mcbutton">HOW TO PLAY</span><br>
+<span id="embedgame" class="mcbutton">EMBED ON YOUR SITE</span><br>
+</div>
+<div id="embed_code" style="display:none;"><br>Copy and paste the code below:<br><input style="width:365px;" value="<iframe src=&quot;//www.gamessumo.com?embed=minecraft&quot; style=&quot;width:854px;height:480px;border:none;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;></iframe>" onclick="this.select();"></div>
+<div id="instructions">
+Move using WASD/Cursor keys and mouse - SPACE to jump (double jump to hover)<br>
+Left/right click to mine/place items<br>
+1-9 = Select item slots - T = Throw item - C = Add tree<br>
+CTRL-S = Save - CTRL-L = Load - F1 = HUD<br>
+ESC - Pause game/see these instructions again
+</div>
+<div id="header">
+</div>
 
 <div id="footer">
-<a href="https://www.youtube.com/@MMC-Gaming/" target="_blank">
-         	<img src="banner.jpg" width="80" height="80" alt="https://www.youtube.com/@MMC-Gaming/" />
+<a href="https://martinmmcyt.github.io/mine-crap/" target="_blank">
+         	<img src="banner.jpg" width="80" height="80" alt="https://martinmmcyt.github.io/mine-crap/" />
      </a>
 </div>
 <div id="preload_div" style="position:absolute;top:139px;left:0px;width:300px;height:250px;transition: all 0.5s ease-out;">
@@ -138,7 +136,7 @@ color: #FFFFA0;
 </div>
 <img src="terrain.png" id="terrain">
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
+      <!-- Global site tag (gtag.js) - Google Analytics
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81855592-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -146,6 +144,6 @@ color: #FFFFA0;
   gtag('js', new Date());
 
   gtag('config', 'UA-81855592-1');
-</script>
+</script>  -->
 </body>
 </html>
